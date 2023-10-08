@@ -15,11 +15,11 @@
                     <h5>Jenis Kelamin</h5>
                     <div class="container ml-5">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="pria" id="pria" value="pilihan1">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pria" value="Pria">
                             <label class="form-check-label" for="inlineRadio1">Pria</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="wanita" id="wanita" value="pilihan2">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="wanita" value="Wanita">
                             <label class="form-check-label" for="inlineRadio2">Wanita</label>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
         </div>
 
         <div class="container">
-            <h1>Rumus BMI Berdasarkan WHO</h1>
+            <h1>Keterangan BMI menurut WHO</h1>
             <table class="table table-hover">
                 <tr>
                     <th>Keterangan</th>
