@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('coba', 'App\Http\Controllers\CobaController@index')->name('user');
+Route::get('sipenma', 'App\Http\Controllers\SipenmaController@index')->name('');
+Route::get('bmi', 'App\Http\Controllers\BmiController@index')->name('');

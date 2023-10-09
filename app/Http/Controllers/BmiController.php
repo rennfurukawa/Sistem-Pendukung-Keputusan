@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CobaController extends Controller
+class BmiController extends Controller
 {
     public function index(){
-        return view('base');
+        return view('bmi');
     }
 }

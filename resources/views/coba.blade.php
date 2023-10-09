@@ -24,6 +24,19 @@
                 font-c
             }
 
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Styling footer dengan latar belakang hijau tua (#008170) */
+            footer {
+                background-color: #008170;
+                color: white; /* Warna teks putih agar terlihat kontras */
+                text-align: center;
+                padding: 20px; /* Menambahkan ruang padding ke dalam footer */
+            }
+
 
         </style>
     </head>
