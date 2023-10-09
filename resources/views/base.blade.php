@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Base</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    {{-- link --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         html, body {
             margin: 0;
@@ -23,6 +27,7 @@
 
         .judul{
             color:#008170;
+            font-weight: 700px;
         }
 
         .circle {
@@ -41,33 +46,56 @@
             position: relative;
             justify-content: center;
         }
+
+        .list {
+            list-style: none;
+        }
+
+        .subheading {
+            font-weight: 700;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
+
+    {{-- navbar --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand judul" href="#">SiPEKA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand judul" href="{{ route('base')}}">SiPEKA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-4">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('base')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#karakteristik">Karakteristik</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#manfaat">Manfaat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#metode">Metode</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Demo
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ route('bmi') }}">BMI</a></li>
+                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penlaian Mahasiswa</a></li>
+                  <li><a class="dropdown-item" href="{{ route('pemeringkatan') }}">Pemeringkatan Mahasiswa</a></li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
-      </nav>
+    </nav>
 
       {{-- main --}}
       <section class="container mt-5 mb-5">
@@ -86,7 +114,7 @@
 
     <section class="container my-5">
         <div class="col">
-            <h2 class="text-center"> Karakteristik Sistem Pendukung Keputusan</h2>
+            <h2 class="text-center" id="karakteristk"> Karakteristik Sistem Pendukung Keputusan</h2>
 
         </div>
 
@@ -100,7 +128,7 @@
 
     <section class="container my-5">
         <div class="col">
-            <h2 class="text-center mb-3"> Manfaat Sistem Pendukung Keputusan</h2>
+            <h2 class="text-center mb-3" id="manfaat"> Manfaat Sistem Pendukung Keputusan</h2>
             <p class="ms-2">Manfaat Sistem Pendukung Keputusan (SPK) antara lain,</p>
         </div>
 
@@ -119,8 +147,31 @@
                 </ul>
             </div>
 
-            <div class="container col-md-6">
+            <div class="container col-md-6 text-center">
                 <img class="img-fluid gambar" src="https://img.freepik.com/free-vector/business-decisions-concept-illustration_114360-4096.jpg" alt="" srcset="">
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="col">
+            <h2 class="text-center mb-3" id="metode"> Metode-metode Dalam Sistem Pendukung Keputusan</h2>
+        </div>
+
+        <div class="row">
+            <div class="container col-md-6">
+                <ul class="list">
+                    <li class="subheading">1. Metode SAW (Simple Additive Weighting)</li>
+                    <p>Metode ini menggabungkan bobot kriteria dan nilai kinerja alternatif untuk menghitung skor total, memungkinkan pemilihan alternatif dengan skor tertinggi.</p>
+                    <li class="subheading">2. Metode AHP (Analytic Hierarchy Process):</li>
+                    <p>AHP menggunakan struktur hirarkis untuk membandingkan kriteria dan alternatif dengan matriks perbandingan berpasangan, menghasilkan bobot kriteria dan skor alternatif.</p>
+                    <li class="subheading">3. Decision Tree</li>
+                    <li>Ini mengorganisasi data ke dalam struktur berhirarki yang terdiri dari simpul (node) yang mewakili pertanyaan atau keputusan dan cabang-cabang yang mewakili kemungkinan hasil. ingin mencoba decision tree? klik <a href="https://creately.com/lp/decision-tree-maker-online/" target="_blank"><strong style="color: #008170">disini</strong></a></li>
+                    <li class="subheading">4. Metode ELECTRE (Elimination and Choice Expressing Reality):</li>
+                    <p>ELECTRE mengidentifikasi alternatif yang memenuhi kriteria tertentu dengan mempertimbangkan perbedaan antaralternatif dan ambang batasan.</p>
+                    <li class="subheading">5. Metode TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)</li>
+                    <p>TOPSIS membandingkan alternatif dengan solusi ideal positif dan solusi ideal negatif, dan menghitung jarak relatif, kemudian memilih alternatif terdekat dengan solusi ideal positif.</p>
+                </ul>
             </div>
         </div>
     </section>
