@@ -21,4 +21,4 @@ use App\Http\Controllers\CobaController;
 Route::get('/', 'App\Http\Controllers\CobaController@index')->name('base');
 Route::get('sipenma', 'App\Http\Controllers\SipenmaController@index')->name('sipenma');
 Route::get('bmi', 'App\Http\Controllers\BmiController@index')->name('bmi');
-Route::get('pemeringkatan', 'App\Http\Controllers\BmiController@index')->name('pemeringkatan');
+Route::get('pemeringkatan', 'App\Http\Controllers\SipenmaController@pemeringkatan')->name('pemeringkatan');

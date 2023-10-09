@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Leaderboard</title>
+        <title>Pemeringkatan</title>
         <style>
             html, body {
                 margin: 0;
@@ -50,13 +50,12 @@
                 font-size: 24px;
             }
         </style>
-        
+
         <link rel = "icon" href = "https://cdn.discordapp.com/attachments/764727363253829675/1160549610234839050/5b2694795074b9c153754f3b9a454c4248a11d86_s2_n2_y1-removebg-preview.png" type = "image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <style>
         body {
-            font-family: Georgia, serif;
             background: #161532;
     }
         h1 {
@@ -127,16 +126,6 @@
                     <td>1</td>
                     <td>Fance Muhammad</td>
                     <td>1337</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Kristus</td>
-                    <td>6969</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Yesus Sidharta</td>
-                    <td>666</td>
                 </tr>
             </table>
         </div>
