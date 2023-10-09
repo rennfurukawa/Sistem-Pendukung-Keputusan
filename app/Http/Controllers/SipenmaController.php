@@ -18,6 +18,11 @@ class SipenmaController extends Controller
         return view('sipenma');
     }
 
+    public function pemeringkatan()
+    {
+        return view('pemeringkatan');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -14,10 +14,11 @@ use App\Http\Controllers\CobaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('coba', 'App\Http\Controllers\CobaController@index')->name('user');
-Route::get('sipenma', 'App\Http\Controllers\SipenmaController@index')->name('');
-Route::get('bmi', 'App\Http\Controllers\BmiController@index')->name('');
+Route::get('/', 'App\Http\Controllers\CobaController@index')->name('base');
+Route::get('sipenma', 'App\Http\Controllers\SipenmaController@index')->name('sipenma');
+Route::get('bmi', 'App\Http\Controllers\BmiController@index')->name('bmi');
+Route::get('pemeringkatan', 'App\Http\Controllers\BmiController@index')->name('pemeringkatan');
