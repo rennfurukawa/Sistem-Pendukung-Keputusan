@@ -84,7 +84,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{{ route('bmi') }}">BMI</a></li>
-                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penlaian Mahasiswa</a></li>
+                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penilaian Mahasiswa</a></li>
                   <li><a class="dropdown-item" href="{{ route('pemeringkatan') }}">Pemeringkatan Mahasiswa</a></li>
                 </ul>
               </li>
@@ -121,33 +121,33 @@
                         </div>
                     </div>
                     <div class="form-group row mt-2">
-                        <label for="npm" class="col-sm-2 col-form-label">Nomor Pokok Mahasiwa</label>
-                        <div class="col-sm-10 mt-3">
-                            <input type="number" class="form-control" id="npm" placeholder="Masukkan NPM" required>
+                        <label for="npm" class="col-sm-2 col-form-label">Nomor Pokok Mahasiswa (NPM)</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="npm" placeholder="Masukkan NPM" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
                         <label for="uts" class="col-sm-2 col-form-label">Nilai UTS</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="uts" required>
+                            <input type="number" class="form-control" name="uts" placeholder="Masukkan Nilai UTS" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
                         <label for="uas" class="col-sm-2 col-form-label">Nilai UAS</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="uas" required>
+                            <input type="number" class="form-control" name="uas" placeholder="Masukkan Nilai UAS" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
                         <label for="tk" class="col-sm-2 col-form-label">Nilai Tugas & Kuis</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="tk" required>
+                            <input type="number" class="form-control" name="tk" placeholder="Masukkan Nilai Tugas" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
                         <label for="pre" class="col-sm-2 col-form-label">Presensi</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="pre" required>
+                            <input type="number" class="form-control" name="pre" placeholder="Masukkan Presensi" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-md mt-2 justify-content-center" name="hitung">Hitung</button>
@@ -273,11 +273,22 @@
                         ';
                     }
 
-                    $mahasiswa = collect([$_GET['nama'], $hasil]);
+                    //store data to session
+                    $mahasiswa = collect([$_GET['nama'], $_GET['npm'], $hasil]);
                     Session::push('mahasiswa', $mahasiswa);
+                    //print_r(Session::get('mahasiswa'));
 
-
-                    var_dump(Session::get('mahasiswa'));
+                    //sort data from session
+                    // $mahasiswas = Session::get('mahasiswa');
+                    // function compareNilai($a, $b) {
+                    //     return $b[1]-$a[1];
+                    // }
+                    // usort($mahasiswas, 'compareNilai');
+                    // foreach ($mahasiswas as $mhs){
+                    //     echo $mhs[0] . " -> " . $mhs[1];
+                    // }
+                    // //print_r(usort($mahasiswas, 'compareNilai'));
+                    // print_r(collect($mahasiswas)->max([1])); //ambil satu data terbesar
                 }
             ?>
         </div>

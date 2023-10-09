@@ -115,20 +115,53 @@
             <h1>Leaderboard</h1>
         </div>
 
-        <div class="container d-flex justify-content-center">
-            <table class="table table-warning mt-3" style="width:20rem">
-                <tr>
-                    <th style="padding-left: 1px;"><img width="25" height="20" src="https://img.icons8.com/color/24/crown.png" alt="crown"/></th>
-                    <th>Name</th>
-                    <th>Point</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Fance Muhammad</td>
-                    <td>1337</td>
-                </tr>
-            </table>
+        <div class="container my-4 ">
+            <div class="container d-flex justify-content-center">
+                <table class="table table-warning mt-3" style="width:20rem">
+                    <tr>
+                        <th style="padding-left: 1px;"><img width="25" height="20" src="https://img.icons8.com/color/24/crown.png" alt="crown"/></th>
+                        <th>Name</th>
+                        <th>Point</th>
+                    </tr>
+
+                    @if (Session::has('mahasiswa'))
+                        <?php
+                            $mahasiswas = Session::get('mahasiswa');
+                            function compareNilai($a, $b){
+                                return $b[1] - $a[1];
+                            }
+                            usort($mahasiswas, 'compareNilai');//functionutk calback
+                            $no = 0;
+                            foreach ($mahasiswas as $mhs) {
+                                $no++;
+                                echo '
+                                <tr>
+                                    <td>'.$no.'</td>
+                                    <td>'.$mhs[0].'</td>
+                                    <td>'.$mhs[1].'</td>
+                                </tr>';
+                            }
+                        ?>
+                    @endif
+
+
+                </table>
+            </div>
+
+            <div class="container d-flex justify-content-center mb-5">
+                <form action="" method="get">
+                    <button type="submit" class="btn btn-danger btn-md mt-2 justify-content-center" name="hapus">Hapus Data</button>
+                </form>
+                <?php
+                    if(isset($_GET['hapus'])){
+                        Session::forget('mahasiswa');
+                        header("Location:".$_SERVER['PHP_SELF']);//refresh current page
+                    }
+                ?>
+            </div>
+
         </div>
+
 
         <section class="fixed-bottom footer mt-5">
             <p>@copyright 2023</p>
