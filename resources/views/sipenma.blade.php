@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIPENMA</title>
+    <link rel = "icon" href = "https://cdn.discordapp.com/attachments/764727363253829675/1160549610234839050/5b2694795074b9c153754f3b9a454c4248a11d86_s2_n2_y1-removebg-preview.png" type = "image/x-icon">
     <style>
         html, body {
             margin: 0;
@@ -116,7 +117,7 @@
                     <div class="form-group row mt-2">
                         <label for="nama" class="col-sm-2 col-form-label">Nama Mahasiswa</label>
                         <div class="col-sm-10 mt-3">
-                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
+                            <input name="nama"  type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
@@ -271,6 +272,12 @@
                             </div>
                         ';
                     }
+
+                    $mahasiswa = collect([$_GET['nama'], $hasil]);
+                    Session::push('mahasiswa', $mahasiswa);
+
+
+                    var_dump(Session::get('mahasiswa'));
                 }
             ?>
         </div>

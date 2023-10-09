@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Base</title>
+    <link rel = "icon" href = "https://cdn.discordapp.com/attachments/764727363253829675/1160549610234839050/5b2694795074b9c153754f3b9a454c4248a11d86_s2_n2_y1-removebg-preview.png" type = "image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     {{-- link --}}
@@ -114,7 +115,7 @@
 
     <section class="container my-5">
         <div class="col">
-            <h2 class="text-center" id="karakteristk"> Karakteristik Sistem Pendukung Keputusan</h2>
+            <h2 class="text-center" id="karakteristik"> Karakteristik Sistem Pendukung Keputusan</h2>
 
         </div>
 
@@ -129,11 +130,11 @@
     <section class="container my-5">
         <div class="col">
             <h2 class="text-center mb-3" id="manfaat"> Manfaat Sistem Pendukung Keputusan</h2>
-            <p class="ms-2">Manfaat Sistem Pendukung Keputusan (SPK) antara lain,</p>
+            <p class="ms-2 mt-3">Manfaat Sistem Pendukung Keputusan (SPK) antara lain,</p>
         </div>
 
         <div class="row">
-            <div class="container col-md-6">
+            <div class="container col-md-6 mt-1">
                 <ul>
                     <li>Meningkatkan Pengambilan Keputusan</li>
                     <li>Mempercepat Proses Keputusan</li>
@@ -158,7 +159,7 @@
             <h2 class="text-center mb-3" id="metode"> Metode-metode Dalam Sistem Pendukung Keputusan</h2>
         </div>
 
-        <div class="row">
+        <div class="row" mt-3>
             <div class="container col-md-6">
                 <ul class="list">
                     <li class="subheading">1. Metode SAW (Simple Additive Weighting)</li>
@@ -166,7 +167,7 @@
                     <li class="subheading">2. Metode AHP (Analytic Hierarchy Process):</li>
                     <p>AHP menggunakan struktur hirarkis untuk membandingkan kriteria dan alternatif dengan matriks perbandingan berpasangan, menghasilkan bobot kriteria dan skor alternatif.</p>
                     <li class="subheading">3. Decision Tree</li>
-                    <li>Ini mengorganisasi data ke dalam struktur berhirarki yang terdiri dari simpul (node) yang mewakili pertanyaan atau keputusan dan cabang-cabang yang mewakili kemungkinan hasil. ingin mencoba decision tree? klik <a href="https://creately.com/lp/decision-tree-maker-online/" target="_blank"><strong style="color: #008170">disini</strong></a></li>
+                    <li>Ini mengorganisasi data ke dalam struktur berhirarki yang terdiri dari simpul (node) yang mewakili pertanyaan atau keputusan dan cabang-cabang yang mewakili kemungkinan hasil. Ingin mencoba decision tree? klik <a href="https://creately.com/lp/decision-tree-maker-online/" target="_blank"><strong style="color: #008170">disini</strong></a></li>
                     <li class="subheading">4. Metode ELECTRE (Elimination and Choice Expressing Reality):</li>
                     <p>ELECTRE mengidentifikasi alternatif yang memenuhi kriteria tertentu dengan mempertimbangkan perbedaan antaralternatif dan ambang batasan.</p>
                     <li class="subheading">5. Metode TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)</li>
