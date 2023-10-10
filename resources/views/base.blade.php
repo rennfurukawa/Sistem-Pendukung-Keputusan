@@ -1,3 +1,8 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+@extends('front')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +28,10 @@
             color: white; /* Warna teks putih agar terlihat kontras */
             text-align: center;
             padding: 20px; /* Menambahkan ruang padding ke dalam footer */
-            height: 60px;
+            height: 50px;
         }
 
         .judul{
-            color:#008170;
             font-weight: 700px;
         }
 
@@ -60,43 +64,6 @@
 </head>
 <body>
 
-    {{-- navbar --}}
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand judul" href="{{ route('base')}}">SiPEKA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-4">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('base')}}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#karakteristik">Karakteristik</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#manfaat">Manfaat</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#metode">Metode</a>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Demo
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ route('bmi') }}">BMI</a></li>
-                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penilaian Mahasiswa</a></li>
-                  <li><a class="dropdown-item" href="{{ route('pemeringkatan') }}">Pemeringkatan Mahasiswa</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
 
       {{-- main --}}
       <section class="container mt-5 mb-5">
@@ -167,7 +134,7 @@
                     <li class="subheading">2. Metode AHP (Analytic Hierarchy Process):</li>
                     <p>AHP menggunakan struktur hirarkis untuk membandingkan kriteria dan alternatif dengan matriks perbandingan berpasangan, menghasilkan bobot kriteria dan skor alternatif.</p>
                     <li class="subheading">3. Decision Tree</li>
-                    <li>Ini mengorganisasi data ke dalam struktur berhirarki yang terdiri dari simpul (node) yang mewakili pertanyaan atau keputusan dan cabang-cabang yang mewakili kemungkinan hasil. Ingin mencoba decision tree? klik <a href="https://creately.com/lp/decision-tree-maker-online/" target="_blank"><strong style="color: #008170">disini</strong></a></li>
+                    <li class="mb-1">Ini mengorganisasi data ke dalam struktur berhirarki yang terdiri dari simpul (node) yang mewakili pertanyaan atau keputusan dan cabang-cabang yang mewakili kemungkinan hasil. Ingin mencoba decision tree? klik <a href="https://creately.com/lp/decision-tree-maker-online/" target="_blank"><strong style="color: #008170">disini</strong></a></li>
                     <li class="subheading">4. Metode ELECTRE (Elimination and Choice Expressing Reality):</li>
                     <p>ELECTRE mengidentifikasi alternatif yang memenuhi kriteria tertentu dengan mempertimbangkan perbedaan antaralternatif dan ambang batasan.</p>
                     <li class="subheading">5. Metode TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)</li>
@@ -176,13 +143,10 @@
             </div>
         </div>
     </section>
-
+@endsection
 
       {{-- //main --}}
 
-    <section class="fixed-bottom footer mt-5">
-        <p>@copyright 2023</p>
-    </section>
-
+      
 </body>
 </html>

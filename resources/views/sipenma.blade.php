@@ -103,7 +103,7 @@
                 <form action="" method="get">
                     <div class="form-group">
                         <label for="">Mata Kuliah</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" name="matkul" aria-label="Default select example">
                             <option selected>Pilih Mata Kuliah</option>
                             <option value="1">Sistem & Teknologi Informasi </option>
                             <option value="2">Bahasa Inggris</option>
@@ -117,7 +117,7 @@
                     <div class="form-group row mt-2">
                         <label for="nama" class="col-sm-2 col-form-label">Nama Mahasiswa</label>
                         <div class="col-sm-10 mt-3">
-                            <input name="nama"  type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
+                            <input name="nama" type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
@@ -129,28 +129,28 @@
                     <div class="form-group row mt-2">
                         <label for="uts" class="col-sm-2 col-form-label">Nilai UTS</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="uts" placeholder="Masukkan Nilai UTS" required>
-                        </div>
+                            <input type="number" max="100" min="0" class="form-control" name="uts" placeholder="Masukkan Nilai UTS" required>
+                        </div >
                     </div>
                     <div class="form-group row mt-2">
                         <label for="uas" class="col-sm-2 col-form-label">Nilai UAS</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="uas" placeholder="Masukkan Nilai UAS" required>
+                            <input type="number" max="100" min="0" class="form-control" name="uas" placeholder="Masukkan Nilai UAS" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
                         <label for="tk" class="col-sm-2 col-form-label">Nilai Tugas & Kuis</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="tk" placeholder="Masukkan Nilai Tugas" required>
+                            <input type="number" max="100" min="0" class="form-control" name="tk" placeholder="Masukkan Nilai Tugas" required>
                         </div>
                     </div>
                     <div class="form-group row mt-2">
                         <label for="pre" class="col-sm-2 col-form-label">Presensi</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="pre" placeholder="Masukkan Presensi" required>
+                            <input type="number" max="100" min="0" class="form-control" name="pre" placeholder="Masukkan Presensi" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-md mt-2 justify-content-center" name="hitung">Hitung</button>
+                    <button type="submit" class="btn btn-primary btn-md mt-3 justify-content-center" name="hitung">Hitung</button>
                 </form>
             </div>
             <?php
@@ -160,8 +160,10 @@
                     $tk = $_GET['tk'] * 0.4;
                     $presensi = $_GET['pre'] * 0.1;
                     $hasil = ($uts + $uas + $tk + $presensi);
+                    $predikat = "K";
 
                     if($hasil <= 40){
+                        $predikat = "E";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -173,6 +175,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 50) {
+                        $predikat = "D";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -184,6 +187,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 55) {
+                        $predikat = "C-";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -195,6 +199,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 60) {
+                        $predikat = "C";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -206,6 +211,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 65) {
+                        $predikat = "C+";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -217,6 +223,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 70) {
+                        $predikat = "B-";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -228,6 +235,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 75) {
+                        $predikat = "B";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -239,6 +247,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 80) {
+                        $predikat = "B+";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -250,6 +259,7 @@
                             </div>
                         ';
                     }elseif ($hasil <= 85) {
+                        $predikat = "A-";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -261,6 +271,7 @@
                             </div>
                         ';
                     }elseif ($hasil > 85) {
+                        $predikat = "A";
                         echo'
                             <div class="card-footer justify-content-end">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -272,10 +283,31 @@
                             </div>
                         ';
                     }
-
                     //store data to session
-                    $mahasiswa = collect([$_GET['nama'], $_GET['npm'], $hasil]);
-                    Session::push('mahasiswa', $mahasiswa);
+                    if(isset($_GET['matkul'])){
+                        $matkul = isset($_GET['matkul']);
+                        if($matkul == 1){
+                            $matkul = "Sistem & Teknologi Informasi";
+                        }else if($matkul = 2){
+                            $matkul = "Bahasa Inggris";
+                        }else if($matkul = 3){
+                            $matkul = "Arsitektur Komputer";
+                        } else if($matkul = 4){
+                            $matkul = "Bahasa Indonesia";
+                        } else if($matkul = 5){
+                            $matkul = "Matematika Komputasi";
+                        } else if($matkul = 6){
+                            $matkul = "Etika & Kompetensi Informatika";
+                        } else if($matkul = 7){
+                            $matkul = "Pancasila";
+                        }
+                        //print_r($matkul);
+
+                        $mahasiswa = collect([$_GET['nama'], $_GET['npm'], $matkul, $hasil, $predikat]);
+                        Session::push('mahasiswa', $mahasiswa);
+                        //print_r($mahasiswa);
+                    }
+                    
                     //print_r(Session::get('mahasiswa'));
 
                     //sort data from session
@@ -294,8 +326,8 @@
         </div>
     </div>
 
-    <section class="fixed-bottom footer mt-5">
-        <p>@copyright 2023</p>
+    <section class="fixed-bottom footer mt-5 p-2">
+        <p>@Copyright 2023</p>
     </section>
 
 </body>
