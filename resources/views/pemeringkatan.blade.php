@@ -101,7 +101,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{{ route('bmi') }}">BMI</a></li>
-                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penlaian Mahasiswa</a></li>
+                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penilaian Mahasiswa</a></li>
                   <li><a class="dropdown-item" href="{{ route('pemeringkatan') }}">Pemeringkatan Mahasiswa</a></li>
                 </ul>
               </li>
@@ -120,6 +120,7 @@
                 <table class="table table-warning mt-3" style="width:20rem">
                     <tr>
                         <th style="padding-left: 1px;"><img width="25" height="20" src="https://img.icons8.com/color/24/crown.png" alt="crown"/></th>
+                        <th>NPM</th>
                         <th>Name</th>
                         <th>Point</th>
                     </tr>
@@ -128,7 +129,7 @@
                         <?php
                             $mahasiswas = Session::get('mahasiswa');
                             function compareNilai($a, $b){
-                                return $b[1] - $a[1];
+                                return $b[2] - $a[2];
                             }
                             usort($mahasiswas, 'compareNilai');//functionutk calback
                             $no = 0;
@@ -137,8 +138,9 @@
                                 echo '
                                 <tr>
                                     <td>'.$no.'</td>
-                                    <td>'.$mhs[0].'</td>
                                     <td>'.$mhs[1].'</td>
+                                    <td>'.$mhs[0].'</td>
+                                    <td>'.$mhs[2].'</td>
                                 </tr>';
                             }
                         ?>
