@@ -99,9 +99,6 @@
         @yield('content')
     </div>
 
-    <section class="fixed-bottom footer mt-5 p-2">
-        <p>@Copyright 2023</p>
-    </section>
 </body>
 </html>
 

@@ -1,3 +1,6 @@
+@extends('front')
+
+@section('content')
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,7 +20,7 @@
             color: white; /* Warna teks putih agar terlihat kontras */
             text-align: center;
             padding: 20px; /* Menambahkan ruang padding ke dalam footer */
-            height: 60px;
+            height: 50px;
         }
 
         .judul{
@@ -52,47 +55,11 @@
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-
-    {{-- navbar --}}
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand judul" href="{{ route('base')}}">SiPEKA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-4">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('base')}}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#karakteristik">Karakteristik</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#manfaat">Manfaat</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#metode">Metode</a>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Demo
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ route('bmi') }}">BMI</a></li>
-                  <li><a class="dropdown-item" href="{{ route('sipenma')}}">Sistem Penilaian Mahasiswa</a></li>
-                  <li><a class="dropdown-item" href="{{ route('pemeringkatan') }}">Pemeringkatan Mahasiswa</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-
+    
     <div class="container d-flex align-items-start mt-3">
         <h1 class="text-center">Sistem Penilaian Mahasiswa</h1>
     </div>
@@ -285,20 +252,20 @@
                     }
                     //store data to session
                     if(isset($_GET['matkul'])){
-                        $matkul = isset($_GET['matkul']);
+                        $matkul = $_GET['matkul'];
                         if($matkul == 1){
                             $matkul = "Sistem & Teknologi Informasi";
-                        }else if($matkul = 2){
+                        }else if($matkul == 2){
                             $matkul = "Bahasa Inggris";
-                        }else if($matkul = 3){
+                        }else if($matkul == 3){
                             $matkul = "Arsitektur Komputer";
-                        } else if($matkul = 4){
+                        } else if($matkul == 4){
                             $matkul = "Bahasa Indonesia";
-                        } else if($matkul = 5){
+                        } else if($matkul == 5){
                             $matkul = "Matematika Komputasi";
-                        } else if($matkul = 6){
+                        } else if($matkul == 6){
                             $matkul = "Etika & Kompetensi Informatika";
-                        } else if($matkul = 7){
+                        } else if($matkul == 7){
                             $matkul = "Pancasila";
                         }
                         //print_r($matkul);
@@ -326,9 +293,10 @@
         </div>
     </div>
 
-    <section class="fixed-bottom footer mt-5 p-2">
-        <p>@Copyright 2023</p>
-    </section>
+@endsection
+
+
+@extends('footer')
 
 </body>
 </html>

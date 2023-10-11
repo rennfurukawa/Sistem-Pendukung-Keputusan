@@ -1,5 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 @extends('front')
 
 @section('content')
@@ -23,7 +21,7 @@
             color: white; /* Warna teks putih agar terlihat kontras */
             text-align: center;
             padding: 20px; /* Menambahkan ruang padding ke dalam footer */
-            height: 60px;
+            height: 50px;
         }
 
         .judul{
@@ -60,12 +58,10 @@
 
     <link rel = "icon" href = "https://cdn.discordapp.com/attachments/764727363253829675/1160549610234839050/5b2694795074b9c153754f3b9a454c4248a11d86_s2_n2_y1-removebg-preview.png" type = "image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
-    
-
-    {{-- main --}}
 
     <div class="container d-flex justify-content-center my-5">
         <div class="card shadow" style="width:18rem">
@@ -181,9 +177,7 @@
     </div>
 @endsection
 
-    <section class="fixed-bottom footer mt-5 p-2">
-        <p>@Copyright 2023</p>
-    </section>
+@extends('footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

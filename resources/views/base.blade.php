@@ -147,6 +147,7 @@
 
       {{-- //main --}}
 
+@extends('footer')
       
 </body>
 </html>
